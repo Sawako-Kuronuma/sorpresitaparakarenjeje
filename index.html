@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<style>
+	h1 {
+	font-size: 18px;
+	font-family: "Brush Script MT,cursive";
+	}
+	</style>
+	<title>Sorpresitajeje</title>
+	<link rel="icon" type="png" href="weyno.png">
+</head>
+
+<body style="background-color:black;">
+	<img class="fade" src="grag.png" title="holajejeje" style="position:absolute; left:500px; top:150px; opacity:0; transition: opacity 3.5s;">
+	<img class="fade" src="s.gif" title="holajejeje" style="position:absolute; left:540px; top:150px; opacity:0; transition: opacity 3.5s;">
+	<img class="fade" src="ouyea.gif" title="ouyea" style="position:absolute; left:140px; top:50px; opacity:0; transition: opacity 3.5s;">
+	<img class="fade" src="ouyea.gif" title="ouyea" style="position:absolute; left:940px; top:50px; opacity:0; transition: opacity 3.5s;">
+
+	<img id="pinkie" src="pinkie.gif" title="eres tu mira!!" style="position:absolute; top:400px; left:-300px; opacity:1;">
+
+	<a href="2.html">
+	<button class="fade" style="position:absolute; left:50%; top:100px; transform:translateX(-50%); z-index:999; font-size:20px; background-color:#B87C30; color:#FBFF00; border-radius:15px; border-color:white; opacity:0; transition: opacity 3.5s;">
+	haz click!!
+	</button>
+	</a>
+
+	<h1 class="fade" style="color:white; position:absolute; left:500px; top:315px; opacity:0; transition: opacity 3.5s;">
+	hola karen!!
+	</h1>
+
+	<p class="fade" style="color:white; position:absolute; left:500px; top:335px; opacity:0; transition: opacity 7s;">
+	hice algo pequeñito por tu cumpleaños, espero t guste :D
+	</p>
+
+	<p class="fade" style="color:white; position:absolute; left:500px; top:355px; opacity:0; transition: opacity 7s;">
+	no es mucho, pero es algo q de igual manera queria "regalarte"
+	</p>
+
+	<script>
+	window.onload = () => {
+	document.querySelectorAll(".fade").forEach(el => {
+		el.style.opacity = 1;
+	});
+
+	const pinkie = document.getElementById("pinkie");
+
+	const start = () => {
+		const w = pinkie.naturalWidth;
+		let x = -w - 10;
+		let last = null;
+
+		const loop = t => {
+			if (!last) last = t;
+			const dt = (t - last) / 1000;
+			last = t;
+
+			x += 200 * dt;
+			pinkie.style.left = x + "px";
+
+			if (x > window.innerWidth -15) {
+				setTimeout(() => {
+					x = -w - 10;
+					last = null;
+					requestAnimationFrame(loop);
+				}, 500);
+				return;
+			}
+
+			requestAnimationFrame(loop);
+		};
+
+		requestAnimationFrame(loop);
+	};
+
+	if (pinkie.complete && pinkie.naturalWidth !== 0) {
+		start();
+	} else {
+		pinkie.onload = start;
+	}
+};
+	</script>
+
+</body>
+</html>

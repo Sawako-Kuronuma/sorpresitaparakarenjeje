@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FelizCumple!!!</title>
+
+<style>
+@keyframes rotateSlow {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+</style>
+<link rel="icon" type="png" href="omg.png">
+</head>
+<body style="background-color:#FCFF94;">
+<img id="laweaesa" src="ayy.gif" title="n" style="position:absolute; top:100px; left:-300px; opacity:1; width:200px; height:100px;">
+<img class="fade" src="us.gif" title="holajejeje" style="position:absolute; left:100px; top:350px; opacity:0; transition: opacity 3.5s;">
+<img class="fade" src="jijijij.png" title="pastel!!1" style="position:absolute; left:900px; top:250px; opacity:0; transition: opacity 3.5s;">
+<img class="fade" src="usss.jpg" title="U u-wa-wa-uwa
+Uwa-wawa-takutakuchaa-wo
+Uwa-wawawa-uwa waaiwotoreli
+Uwa-wawawaiwai tarachiro
+U u-wa-wa-uwa
+Uwa-wawa-takutakuchaa-wo
+U u-wa-wa-uwa
+Uwa-wawa-takutakuchaa-wo
+Wa-i-wa-i wawawa
+Sukaraka chaa-wau
+U u-wa-wa-uwa taktaku chaa-wo~" style="position:absolute; left:1100px; top:50px; width:150px; height:150px; opacity:0; transition: opacity 3.5s;">
+<img class="fade" src="us tambien!.jpg" title="qu" style="position:absolute; left:800px; top:50px; width:150px; height:150px; opacity:0; transition: opacity 3.5s;">
+<img class="fade" src="yeii.jpg" title="qu" style="position:absolute; left:550px; top:400px; width:150px; height:150px; opacity:0; transition: opacity 3.5s;">
+
+	<h1 class="fade" style="color:#FF6969;; position:absolute; left:360px; top:200px; opacity:0; transition: opacity 3.5s;">
+	FELIZ CUMPLEAÑOS KAREN!!!!
+	</h1>
+		<h3 class="fade" style="color:#BF2406;; position:absolute; left:340px; top:250px; opacity:0; transition: opacity 3.5s;">
+	has sido una amiga increible para mi, y sinceramente no se q decir jejeje, aprecio mucho tu amistad y estee siempre estare para ti si lo necesitas pq somos amikos!! espero t la pases bien hoy y espero t guste esto jeje, tqm karen, eres mi mejor amiga ok?
+	</h3>
+			<h3 class="fade" style="color:#BF2406;; position:absolute; left:340px; top:350px; opacity:0; transition: opacity 3.5s;">
+	espero podamos seguir siendo amigkos por mucho tiempo mas y asi.,.pero bueno, feliz cumpleaños palchesco!!!!1
+	</h3>
+
+<img src="disco.png" title="holajejeje" style="position:absolute; left:10px; top:20px;  width:200px; height:200px; animation: rotateSlow 8s linear infinite;">
+	<h1  style="color:#278BF5; position:absolute; left:200px; top:20px;">
+	El hombre del mañana
+	</h1>
+		<h3 style="color:#BBF527; position:absolute; left:220px; top:65px; opacity:0.75;">
+	Enjambre
+	</h3>
+
+<script>
+window.onload = () => {
+    document.querySelectorAll(".fade").forEach(el => {
+        el.style.opacity = 1;
+    });
+
+    const laweaesa = document.getElementById("laweaesa");
+
+    const start = () => {
+        const w = laweaesa.naturalWidth;
+        let x = -w - 10;
+        let last = null;
+
+        const loop = t => {
+            if (!last) last = t;
+            const dt = (t - last) / 1000;
+            last = t;
+
+            x += 200 * dt;
+            laweaesa.style.left = x + "px";
+
+            if (x > window.innerWidth - 15) {
+                setTimeout(() => {
+                    const opciones = [
+                        100,
+                        150 + Math.random() * 100
+                    ];
+                    const nuevaY = opciones[Math.floor(Math.random() * opciones.length)];
+                    laweaesa.style.top = nuevaY + "px";
+
+                    x = -w - 10;
+                    last = null;
+                    requestAnimationFrame(loop);
+                }, 500);
+                return;
+            }
+
+            requestAnimationFrame(loop);
+        };
+
+        requestAnimationFrame(loop);
+    };
+
+    if (laweaesa.complete && laweaesa.naturalWidth !== 0) {
+        start();
+    } else {
+        laweaesa.onload = start;
+    }
+};
+</script>
+
+</body>
+</html>
+
